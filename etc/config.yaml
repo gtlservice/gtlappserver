@@ -1,0 +1,23 @@
+version: 1.0
+fork: false
+pidfile: ./gtlappserver.pid
+service: 
+    name: service1
+    host: 127.0.0.1:8119
+zkwrapper:
+    hosts: 127.0.0.1:2181
+    root: /gtlservice
+    device:  
+    location: center
+    pulse: 8s
+    threshold: 1
+api:
+    bind: :8119
+    cors:
+        origin: "*"
+        methods: POST,PUT,GET,DELETE,OPTIONS
+logger:
+    logfile: logs/appserver.log
+    loglevel: info
+    logsize: 2097152
+...
